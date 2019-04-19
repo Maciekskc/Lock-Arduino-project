@@ -9,14 +9,18 @@
 .global redLedOn
 .global redLedOff
 .global greenLedOn
-.global greenLedOn
+.global greenLedOff
 .global buzzerOn
 .global buzzerOff
 
+
+
 pinsSetup:
-	sbi DDRD-0x20, 4
-	sbi DDRD-0x20, 6
-  ret
+  sbi DDRD-0x20, 4
+  sbi DDRD-0x20, 7
+  sbi DDRD-0x20, 7
+  sbi DDRB-0x20, 4
+  sbi DDRB-0x20, 5
  
 delay_500ms:
     ldi  r18, 21
@@ -29,7 +33,7 @@ L1: dec  r20
     dec  r18
     brne L1
     nop
-	
+  
 delay_1500ms:
     ldi  r18, 61
     ldi  r19, 225
@@ -40,34 +44,34 @@ L2: dec  r20
     brne L2
     dec  r18
     brne L2
-    rjmp PC+1
-	
+    nop
+  
 engineStop:
-	cbi PD4
-	cbi PD7
-	
+  cbi PORTD-0x20, 4
+  cbi PORTD-0x20, 7
+  
 engineLeft:
-	sbi PD4
-	cbi PD7
-	
+  sbi PORTD-0x20, 4
+  cbi PORTD-0x20, 7
+  
 engineRight:
-	cbi PD4
-	sbi PD7
-	
+  cbi PORTD-0x20, 4
+  sbi PORTD-0x20, 7
+  
 redLedOn:
-	sbi PB5
+  sbi PORTB-0x20, 5
 
 redLedOff:
-	cbi PB5
-	
+  cbi PORTB-0x20, 5
+  
 greenLedOn:
-	sbi PB4
-	
+  sbi PORTB-0x20, 4
+  
 greenLedOff:
-	cbi PB4
-	
+  cbi PORTB-0x20, 4
+  
 buzzerOn:
-	sbi PD6
-	
+  sbi PORTD-0x20, 6
+  
 buzzerOff:
-	cbi PD6
+  cbi PORTD-0x20, 6
