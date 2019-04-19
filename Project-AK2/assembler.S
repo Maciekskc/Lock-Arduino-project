@@ -21,23 +21,31 @@ pinsSetup:
   sbi DDRD-0x20, 7
   sbi DDRB-0x20, 4
   sbi DDRB-0x20, 5
+  ret
  
 delay_500ms:
-    ldi  r18, 21
-    ldi  r19, 75
-    ldi  r20, 191
+    ldi  r18, 41
+    ldi  r19, 150
+    ldi  r20, 128
+    call L1
+    ret
+    
 L1: dec  r20
     brne L1
     dec  r19
     brne L1
     dec  r18
     brne L1
-    nop
+    ret
   
 delay_1500ms:
-    ldi  r18, 61
-    ldi  r19, 225
-    ldi  r20, 64
+    nop
+    ldi  r18, 122
+    ldi  r19, 193
+    ldi  r20, 130
+    call L2
+    ret
+    
 L2: dec  r20
     brne L2
     dec  r19
@@ -45,33 +53,45 @@ L2: dec  r20
     dec  r18
     brne L2
     nop
+    ret
+
   
 engineStop:
   cbi PORTD-0x20, 4
   cbi PORTD-0x20, 7
+  ret
   
 engineLeft:
   sbi PORTD-0x20, 4
   cbi PORTD-0x20, 7
+  ret
   
 engineRight:
   cbi PORTD-0x20, 4
   sbi PORTD-0x20, 7
+  ret
   
 redLedOn:
   sbi PORTB-0x20, 5
+  ret
 
 redLedOff:
   cbi PORTB-0x20, 5
+  ret
   
 greenLedOn:
   sbi PORTB-0x20, 4
+  ret
   
 greenLedOff:
   cbi PORTB-0x20, 4
+  ret
   
 buzzerOn:
   sbi PORTD-0x20, 6
+  ret
   
 buzzerOff:
   cbi PORTD-0x20, 6
+  ret
+  
