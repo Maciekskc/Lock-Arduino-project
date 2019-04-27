@@ -109,8 +109,8 @@ void opening(){
   greenLedOn();
   buzzerOn();
   delay_500ms();
-  greenLedOn();
-  buzzerOn();
+  greenLedOff();
+  buzzerOff();
   engineStop();
 }
 
@@ -125,7 +125,7 @@ void closing(){
   greenLedOn();
   buzzerOn();
   delay_500ms();
-  greenLedOn();
-  buzzerOn();
+  greenLedOff();
+  buzzerOff();
   engineStop();
 }
