@@ -13,11 +13,11 @@ Projekt ustawiony pod płytkę Arduino Leaonardo.
 Wykorzystane piny:
 | Urządzenie                |   Odpowiadający pin               |
 -----------------------------------------------------------------
-Silnik  -sterowanie w prawo:|   
-        -sterowanie w lewo: |   
-Czerwona dioda LED :        |   
-Zielona dioda LED           |   
-Brzeęczyk                   |   
+Silnik  -sterowanie w prawo:|   Digital PIN 6
+        -sterowanie w lewo: |   Digital PIN 4
+Czerwona dioda LED :        |   Digital PIN 9
+Zielona dioda LED           |   Digital PIN 8
+Brzeęczyk                   |   Digital PIN 12
 Moduł MFRC522:              
         * RST/Reset         |   ICDP-5
         * SPI SS            |   Digital PIN 10
