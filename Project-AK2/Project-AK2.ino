@@ -64,11 +64,13 @@ if (mfrc522.uid.uidByte[0] == 0x3a &&
      //shardkodowane ID karty która ma dostęp
      Serial.println("Card 3A-98-34-2D, access granted");
      if(state){
+      Serial.println("Closing...");
       closing();//akcja zamyjkania zamka
-      state = true;
-     }else{
-      opening();//akcja otworzenia zamka
       state = false;
+     }else{
+      Serial.println("Opening...");
+      opening();//akcja otworzenia zamka
+      state = true;
      }   
 }else{
     //niepoprawny adres id wyswietla komunikat i w oknie dialogowym
