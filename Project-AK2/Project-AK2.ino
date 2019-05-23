@@ -1,6 +1,6 @@
 /*******************************************************************
             Projekt: Zasuwka do drzwi.
-Moduł decyzyjny opiera się na kodzie w języku C z bibliotą MFRC522 
+Moduł decyzyjny opiera się na kodzie w języku C z biblioteką MFRC522 
 obsługującą czujnik kart magnetycznych.
 Moduł operacyjny wykonujący akcje opiera się na metodach
 napisanych w języku assembler, ich lista znajduje sie w pliku 
@@ -39,7 +39,7 @@ bool state = false; //status zamka(false -otwarty/true -zamknięty - domyślnie 
 void setup() {
   pinsSetup();       //USTAWIANIE PINOW DO TESTOWANIA AKCJI
 	Serial.begin(9600);		// Initialize serial communications with the PC
-	while (!Serial);		 // PĘTLA WYKRYWAJĄCA BŁĄD URUCHOMIENIA OKNA DIALOGOWEGO
+	//while (!Serial);		 // PĘTLA WYKRYWAJĄCA BŁĄD URUCHOMIENIA OKNA DIALOGOWEGO
 	SPI.begin();			// Inicjacja portów ICSP(SPI)
 	mfrc522.PCD_Init();		// Inicjacja modułu MFRC522
 	Serial.println(F("Scan PICC to see UID, SAK, type, and data blocks...")); //komunikat okna dialogowego sygnalizujący poprawne uruchomienie komponentów
