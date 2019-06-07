@@ -40,7 +40,7 @@ void setup() {
   pinsSetup();       //USTAWIANIE PINOW DO TESTOWANIA AKCJI
 	Serial.begin(9600);		// Initialize serial communications with the PC
 	//while (!Serial);		 // PĘTLA WYKRYWAJĄCA BŁĄD URUCHOMIENIA OKNA DIALOGOWEGO
-	SPI.begin();			// Inicjacja portów ICSP(SPI)
+	SPI.begin();			// Inicjacja portów ICSP(SPI) 
 	mfrc522.PCD_Init();		// Inicjacja modułu MFRC522
 	Serial.println(F("Scan PICC to see UID, SAK, type, and data blocks...")); //komunikat okna dialogowego sygnalizujący poprawne uruchomienie komponentów
 }
